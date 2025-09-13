@@ -169,7 +169,7 @@ impl PrepareMaker {
         }
         let total = self.optnum + self.pesnum;
 
-        if total == committee.quorum_threshold() {
+        if total >= committee.quorum_threshold() {
             if prepare.phase == PRE_ONE {
                 if self.optnum >= committee.quorum_threshold() {
                     return Ok(Some((OPT, true)));
